@@ -1,12 +1,12 @@
-FROM alpine:3.21
-FROM alpine:3.21 as builder
+FROM alpine:3.22
+FROM alpine:3.22 as builder
 WORKDIR /root
 RUN apk add --no-cache git make build-base && \
     git clone --branch master --single-branch https://github.com/Wind4/vlmcsd.git && \
     cd vlmcsd && \
     make
 
-FROM alpine:3.21
+FROM alpine:3.22
 COPY --from=builder /root/vlmcsd/bin/vlmcsd /vlmcsd
 COPY --from=builder /root/vlmcsd/etc/vlmcsd.kmd /vlmcsd.kmd
 RUN apk add --no-cache tzdata
