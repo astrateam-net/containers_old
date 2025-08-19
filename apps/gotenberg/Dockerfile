@@ -1,4 +1,4 @@
-FROM docker.io/gotenberg/gotenberg:8.21.1
+FROM docker.io/gotenberg/gotenberg:8.22.0
 
 USER root
 
