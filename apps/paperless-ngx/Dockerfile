@@ -1,4 +1,4 @@
-FROM ghcr.io/paperless-ngx/paperless-ngx:2.18.1
+FROM ghcr.io/paperless-ngx/paperless-ngx:2.18.2
 USER root
 RUN apt-get update && apt-get install -y \
     tesseract-ocr-rus \
